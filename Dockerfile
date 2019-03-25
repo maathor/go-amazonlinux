@@ -2,7 +2,7 @@ FROM amazonlinux:latest
 
 USER root
 
-RUN yum -y install curl zip aws-cli gzip tar
+RUN yum -y install curl zip aws-cli gzip tar git
 
 WORKDIR ~
 
