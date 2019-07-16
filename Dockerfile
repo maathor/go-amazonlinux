@@ -1,6 +1,17 @@
 FROM amazonlinux:latest 
 
-RUN yum -y install wget aws-cli tar git
+RUN yum -y install wget \
+                    aws-cli \
+                    tar git \
+                    zlib-dev \
+                    pthreads \
+                    make \
+                    gcc \
+                    autoconf \
+                    gcc-c++ \
+                    docker-ce \
+                    docker-ce-cli \
+                    containerd.io
 # go part
 ENV GOLANG_VERSION 1.11.2
 ENV GOLANG_DOWNLOAD_URL https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz
