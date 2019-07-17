@@ -13,7 +13,8 @@ RUN yum -y install wget \
                     docker-ce \
                     docker-ce-cli \
                     containerd.io \
-                    pkgconfig-0.27.1-4.amzn2.x86_64
+                    pkgconfig-0.27.1-4.amzn2.x86_64 \
+                    zip
 
 # go part
 ENV GOLANG_VERSION 1.11.2
