@@ -28,12 +28,12 @@ RUN wget "$GOLANG_DOWNLOAD_URL" -P /tmp/ && \
 RUN mkdir -p /goproject
 ENV GOPATH /goproject
 ENV PATH $PATH:/usr/local/go/bin:$GOPATH/bin
-ENV PKG_CONFIG_PATH $PKG_CONFIG_PATH:/usr/local/lib/pkgconfig/
 RUN git clone https://github.com/edenhill/librdkafka.git
 WORKDIR /tmp/librdkafka
 RUN git checkout v1.1.0 && git checkout -b v1.1.0 && \
     ./configure --prefix=/usr --disable-lz4 --disable-ssl --disable-sasl && make && make install && \
     cd /tmp && rm -rf librdkafka
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/lib
+ENV PKG_CONFIG_PATH $PKG_CONFIG_PATH:/usr/lib/pkgconfig/
 WORKDIR /goproject/
 VOLUME /goproject
