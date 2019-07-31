@@ -15,7 +15,7 @@ RUN yum -y install wget \
                     containerd.io \
                     pkgconfig-0.27.1-4.amzn2.x86_64 \
                     zip
-
+RUN amazon-linux-extras install docker
 # go part
 ENV GOLANG_VERSION 1.11.2
 ENV GOLANG_DOWNLOAD_URL https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz
